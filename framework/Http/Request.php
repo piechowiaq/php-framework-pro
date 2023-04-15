@@ -4,26 +4,17 @@ namespace Bartosz\Http;
 
 class Request
 {
-    public $getParams;
-    public $postParams;
-    public $cookies;
-    public $files;
-//    public $server;
 
     public function __construct(
-        array $getParams,
-        array $postParams,
-        array $cookies,
-        array $files,
+        public array $getParams,
+        public array $postParams,
+        public array $cookies,
+        public array $files,
         public array $server
 
     )
     {
-//        $this->getParams = $getParams;
-//        $this->postParams = $postParams;
-//        $this->cookies = $cookies;
-//        $this->files = $files;
-//        $this->server = $server;
+
     }
 
     public static function createFromGlobals(): Request
