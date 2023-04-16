@@ -4,13 +4,15 @@ namespace Bartosz\Http;
 
 class Request
 {
-
+    /*
+     * Using 8.1 PHP therefor promoted properties are possible with readonly immutable option
+     */
     public function __construct(
-        public array $getParams,
-        public array $postParams,
-        public array $cookies,
-        public array $files,
-        public array $server
+        public readonly array $getParams,
+        public readonly array $postParams,
+        public readonly array $cookies,
+        public readonly array $files,
+        public readonly array $server
 
     )
     {
