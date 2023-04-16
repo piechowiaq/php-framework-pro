@@ -15,6 +15,11 @@ class Kernel
                 $content = '<h1> Hello World II ! </h1>';
                 return new Response($content);
             });
+
+            $routeCollector->addRoute('GET', '/posts/{id:\d+}', function($vars) {
+                $content = "<h1> This id post {$vars['id']} </h1>";
+                return new Response($content);
+            });
         });
 
         // Dispatch a URI, to obtain the route info
