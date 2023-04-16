@@ -25,4 +25,14 @@ class Request
 
     }
 
+    public function getPathInfo(): string
+    {
+        return strtok($this->server['REQUEST_URI'], '?');
+    }
+
+    public function getMethod(): string
+    {
+        return $this->server['REQUEST_METHOD'];
+    }
+
 }
